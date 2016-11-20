@@ -31,7 +31,7 @@ public class StateManager : MonoBehaviour
         }
         else
         {
-            activeState = new GameState(this);
+            activeState = new LevelLoadState(this);
         }
 		ShowState (activeState);
 
