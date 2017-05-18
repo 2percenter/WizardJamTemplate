@@ -19,7 +19,7 @@ public class ExampleWithStates : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (manager.currentState == "GameState") //Can do this this way, or call particular methods within here from GameState.StatUpdate as well. Up to you.
+        if (manager.activeState.GetType() == typeof(GameState)) //Can do this this way, or call particular methods within here from GameState.StatUpdate as well. Up to you.
         {
             if (!bouncing)
             {

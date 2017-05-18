@@ -26,12 +26,12 @@ public class Pauser : MonoBehaviour
 	{
         if (Input.GetKeyUp(KeyCode.P))
 		{
-            if (manager.currentState == "PauseState") //Unpausing must be first within this if-then
+            if (manager.activeState.GetType() == typeof(PauseState)) //Unpausing must be first within this if-then
             {
                 StartCoroutine(Unpause());
             }
 
-            if (manager.currentState == "GameState")
+            if (manager.activeState.GetType() == typeof(GameState))
             {
 				paused = true;
                 PauseState pauseState = new PauseState(manager);

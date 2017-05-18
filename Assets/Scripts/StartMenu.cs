@@ -19,7 +19,7 @@ public class StartMenu : MonoBehaviour
     {
         LevelLoadState levelLoadState = new LevelLoadState(manager);
         manager.SwitchState(levelLoadState);
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        SceneManager.LoadScene("Main", LoadSceneMode.Single); //This assumes your main scene is called "Main". Change here as needed.
     }
 
 }

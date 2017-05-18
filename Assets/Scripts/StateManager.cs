@@ -5,8 +5,8 @@ using Assets.Scripts.Interfaces;
 
 public class StateManager : MonoBehaviour 
 {
-	private IStateBase activeState;		//Whatever your possible states are, e.g. GameState, PlayingState, ShowScoreState, NannyStateMIriteGuyz. Some sample states are provided.
-	public string currentState;			//String with just the state's name in it
+	public IStateBase activeState;		        //Whatever your possible states are, e.g. GameState, PlayingState, ShowScoreState, NannyStateMIriteGuyz. Some sample states are provided.
+	public string currentStateString;			//String with just the state's name in it
 
     private static StateManager instanceRef;
 	
@@ -25,7 +25,7 @@ public class StateManager : MonoBehaviour
 	
 	void Start()
 	{
-        if (SceneManager.GetActiveScene().name == "Startup")
+        if (SceneManager.GetActiveScene().name == "Startup") //I made my opening scene (with main menu, etc) called Startup. Call it whatever you want and change it here.
         {
             activeState = new StartupState(this);
         }
@@ -64,8 +64,8 @@ public class StateManager : MonoBehaviour
 				finalDotLocation = locInString;
 		}
 
-		currentState = tmpString.Substring(finalDotLocation);
-		Debug.Log ("currentState = " + currentState);
+		currentStateString = tmpString.Substring(finalDotLocation);
+		Debug.Log ("currentState = " + currentStateString);
 	}
 	
     //Reinstate this method if you want to restart.
